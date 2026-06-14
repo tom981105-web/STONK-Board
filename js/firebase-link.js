@@ -156,7 +156,8 @@
     };
     set("nbNavBattle", SC.buildBattleUrl(code));
     set("nbNavWiki", SC.buildWikiUrl(code, ""));
-    set("nbNavAdmin", SC.buildAdminUrl(code));
+    // 관리자 페이지 링크는 비로그인 사이트(board)에서는 노출하지 않는다(항상 숨김).
+    // 관리자는 주식시장(battle) 로그인 후 또는 직접 URL 로만 접근한다.
   }
 
   // ===== 연결 / 해제 =====
