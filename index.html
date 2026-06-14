@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STONK Board | 실시간 시장 정보 터미널</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/board.css?v=mb-news-5" />
+  <style>
+    .nb-nav-link{display:inline-flex;align-items:center;padding:4px 10px;margin-left:4px;border:1px solid rgba(255,255,255,.18);border-radius:8px;font-size:12px;font-weight:600;color:inherit;text-decoration:none;opacity:.85}
+    .nb-nav-link:hover{opacity:1;border-color:rgba(255,255,255,.4)}
+  </style>
+</head>
+<body class="board-body">
+  <header class="nb-header">
+    <div class="nb-brand">
+      <span class="nb-mark">S</span>
+      <div class="nb-brand-text">
+        <strong>STONK <span>Board</span></strong>
+        <small>실시간 시장 정보 터미널</small>
+      </div>
+    </div>
+    <div id="nbIndex" class="nb-index"></div>
+    <div class="nb-head-right">
+      <a id="nbNavBattle" class="nb-nav-link" target="_blank" rel="noopener" hidden>Battle</a>
+      <a id="nbNavWiki" class="nb-nav-link" target="_blank" rel="noopener" hidden>Wiki</a>
+      <a id="nbNavAdmin" class="nb-nav-link" target="_blank" rel="noopener" hidden>Admin</a>
+      <span id="nbClock" class="nb-clock">--:--</span>
+      <button id="nbDisconnect" class="nb-exit" type="button" hidden>방 나가기</button>
+    </div>
+  </header>
+
+  <!-- 시장 요약 띠 -->
+  <section id="nbSummary" class="nb-summary"></section>
+
+  <main class="nb-grid">
+    <!-- 좌: 종목 모니터 -->
+    <aside class="nb-card nb-watch">
+      <div class="nb-card-head">
+        <h2>종목 시세</h2>
+        <div class="nb-sort">
+          <button class="nb-sort-btn is-active" data-sort="change">등락순</button>
+          <button class="nb-sort-btn" data-sort="value">거래대금</button>
+        </div>
+      </div>
+      <ul id="nbStockList" class="nb-stock-list"></ul>
+    </aside>
+
+    <!-- 중앙: 선택 종목 상세 + 프로필 -->
+    <section class="nb-card nb-detail">
+      <div id="nbDetailHead" class="nb-detail-head"></div>
+      <div class="nb-spark-wrap"><canvas id="nbSpark"></canvas></div>
+      <div id="nbStats" class="nb-stats"></div>
+      <div id="nbProfile" class="nb-profile"></div>
+      <div class="nb-relnews">
+        <h3>이 종목 관련 정보</h3>
+        <ul id="nbRelNews" class="nb-feed compact"></ul>
+      </div>
+    </section>
+
+    <!-- 우: 라이브 뉴스피드 -->
+    <section class="nb-card nb-feedwrap">
+      <div class="nb-card-head">
+        <h2>실시간 정보</h2>
+        <div id="nbFeedFilters" class="nb-filters">
+          <button class="nb-filter is-active" data-f="all">전체</button>
+          <button class="nb-filter" data-f="news">뉴스</button>
+          <button class="nb-filter" data-f="disclosure">공시</button>
+          <button class="nb-filter" data-f="rumor">루머</button>
+          <button class="nb-filter" data-f="analyst">애널리스트</button>
+          <button class="nb-filter" data-f="flow">체결속보</button>
+        </div>
+      </div>
+      <ul id="nbFeed" class="nb-feed"></ul>
+    </section>
+  </main>
+
+  <!-- 하단: 순위 / 공모주 / 업종 -->
+  <section class="nb-bottom">
+    <div class="nb-card nb-rank">
+      <div class="nb-card-head"><h2>참가자 순위</h2></div>
+      <ol id="nbRank" class="nb-rank-list"></ol>
+    </div>
+    <div class="nb-card nb-ipo">
+      <div class="nb-card-head"><h2>공모주 청약</h2></div>
+      <div id="nbIpo" class="nb-ipo-body"></div>
+    </div>
+    <div class="nb-card nb-sectors">
+      <div class="nb-card-head"><h2>업종 분위기</h2></div>
+      <div id="nbSectors" class="nb-sector-grid"></div>
+    </div>
+  </section>
+
+  <footer class="nb-footer">
+    STONK Board · 가상 데이터 정보 포털 · STONK Battle 연동 · 실제 투자/기업/뉴스와 무관
+  </footer>
+
+  <!-- 데이터(기업 프로필) + 실시간 연동 + 뉴스룸 렌더러 -->
+  <script src="js/site-config.js?v=1.4.0"></script>
+  <script src="js/market-admin-adapter.js?v=ma-direct-1"></script>
+  <script src="js/data.js?v=mb-news-5"></script>
+  <script src="js/board-live.js?v=mb-news-5"></script>
+  <script src="js/firebase-link.js?v=mb-news-5"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STONK Board | 일정표</title>
+  <link rel="stylesheet" href="css/style.css?v=mb-link-3">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="STONK Board 홈">
+        <span class="brand-mark">S</span>
+        <span><strong>STONK <span>Board</span></strong><small>STONK Battle 정보 포털</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="주요 메뉴">
+        <a href="index.html" data-nav="index">시장요약</a>
+        <a href="companies.html" data-nav="companies">기업정보</a>
+        <a href="calendar.html" data-nav="calendar">일정표</a>
+        <a href="rumors.html" data-nav="rumors">루머게시판</a>
+        <a href="disclosures.html" data-nav="disclosures">공시센터</a>
+        <a href="reports.html" data-nav="reports">애널리스트 리포트</a>
+        <a href="admin.html" data-nav="admin">관리자</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="compact-hero">
+      <p class="eyebrow">Weekly Desk</p>
+      <h1>일정표</h1>
+      <p>자동 생성된 뉴스, 루머, 공시 재료가 라운드 일정으로 연결됩니다.</p>
+    </section>
+
+    <section id="pageBrief" class="section-block"></section>
+
+    <section class="section-block">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">This Week</p>
+          <h2>이번 주 이벤트</h2>
+        </div>
+        <div class="section-actions">
+          <span id="calendarRoundLabel" class="count-pill"></span>
+          <span id="eventCount" class="count-pill"></span>
+        </div>
+      </div>
+      <div class="calendar-shell">
+        <div class="calendar-meta">
+          <div>
+            <strong id="calendarRangeLabel">라운드 일정</strong>
+            <span>월요일 시작 · 자동/강제 생성 이벤트 포함</span>
+          </div>
+          <span class="mini-tag">달력 보기</span>
+        </div>
+        <div class="calendar-weekdays" aria-hidden="true">
+          <span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span><span>일</span>
+        </div>
+        <div id="calendarGrid" class="calendar-grid" aria-label="라운드 이벤트 달력"></div>
+      </div>
+      <h3 class="subsection-title">상세 일정</h3>
+      <div id="eventList" class="timeline"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>일정은 Market Battle 라운드 운영용 가상 이벤트입니다.</p>
+  </footer>
+
+  <script src="js/market-admin-adapter.js?v=ma-direct-1"></script>
+
+  <script src="js/data.js?v=mb-link-3"></script>
+  <script src="js/storage.js?v=mb-link-3"></script>
+  <script src="js/engine.js?v=mb-link-3"></script>
+  <script src="js/main.js?v=mb-link-3"></script>
+  <script src="js/firebase-link.js?v=mb-link-3"></script>
+</body>
+</html>

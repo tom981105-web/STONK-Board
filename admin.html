@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STONK Board | 관리자</title>
+  <link rel="stylesheet" href="css/style.css?v=mb-admin-1">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="STONK Board 홈">
+        <span class="brand-mark">S</span>
+        <span><strong>STONK <span>Board</span></strong><small>STONK Battle 운영 포털</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="주요 메뉴">
+        <a href="index.html" data-nav="index">시장요약</a>
+        <a href="companies.html" data-nav="companies">기업정보</a>
+        <a href="calendar.html" data-nav="calendar">일정표</a>
+        <a href="rumors.html" data-nav="rumors">루머게시판</a>
+        <a href="disclosures.html" data-nav="disclosures">공시센터</a>
+        <a href="reports.html" data-nav="reports">애널리스트 리포트</a>
+        <a href="admin.html" data-nav="admin">관리자</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="compact-hero">
+      <p class="eyebrow">Control Room</p>
+      <h1>관리자 운영실</h1>
+      <p>시즌, 라운드, 시장 충격, 기업 이벤트, 콘텐츠 수정, 백업을 한 화면에서 관리합니다.</p>
+    </section>
+
+    <section class="section-block">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Admin Dashboard</p>
+          <h2>운영 대시보드</h2>
+        </div>
+      </div>
+      <div id="adminDashboard" class="stat-grid admin-dashboard-grid"></div>
+    </section>
+
+    <section id="adminStatus" class="operation-status" aria-live="polite"></section>
+
+    <nav class="admin-quick-nav" aria-label="관리자 빠른 이동">
+      <a href="#battleSync">본게임 연동</a>
+      <a href="#seasonRound">라운드</a>
+      <a href="#marketShock">시장 충격</a>
+      <a href="#companyActions">기업 이벤트</a>
+      <a href="#contentEditor">콘텐츠 수정</a>
+      <a href="#roundHistory">히스토리</a>
+      <a href="#backupPanel">백업</a>
+    </nav>
+
+    <section id="battleSync" class="section-block admin-section-card battle-sync-panel">
+      <div class="section-title compact-title">
+        <div>
+          <p class="eyebrow">Market Battle Link</p>
+          <h2>본게임 가져오기</h2>
+        </div>
+        <span id="battleSyncBadge" class="count-pill">연동 대기</span>
+      </div>
+      <div id="battleSyncStatus" class="battle-sync-status"></div>
+
+      <div class="battle-link-steps" aria-label="본게임 연동 순서">
+        <article class="battle-step">
+          <span>1</span>
+          <strong>본게임에서 복사</strong>
+          <p>Market Battle 게임 화면에서 <b>포털로 복사</b> 버튼을 누릅니다.</p>
+        </article>
+        <article class="battle-step">
+          <span>2</span>
+          <strong>여기서 가져오기</strong>
+          <p>아래 버튼으로 클립보드의 시장 데이터를 불러옵니다.</p>
+        </article>
+        <article class="battle-step">
+          <span>3</span>
+          <strong>포털 자동 반영</strong>
+          <p>뉴스, 일정, 루머, 기업 현황이 현재 라운드에 연결됩니다.</p>
+        </article>
+      </div>
+
+      <div class="battle-main-action">
+        <button id="pasteBattleSnapshot" class="primary-button large-action" type="button">복사한 시장 데이터 가져오기</button>
+        <button id="clearBattleSnapshot" class="ghost-button" type="button">가져온 데이터 비우기</button>
+      </div>
+
+      <details class="advanced-import-panel">
+        <summary>직접 붙여넣기 / 파일 불러오기</summary>
+        <div class="battle-import-grid">
+          <label class="input-group battle-json-input">
+            <span>방 데이터</span>
+            <textarea id="battleSnapshotInput" rows="8" placeholder="본게임에서 복사한 시장 데이터가 여기에 들어갑니다."></textarea>
+          </label>
+          <div class="button-column">
+            <button id="importBattleSnapshot" class="primary-button" type="button">입력한 데이터 반영</button>
+            <label class="file-button">
+              JSON 파일 선택
+              <input id="battleSnapshotFile" type="file" accept="application/json">
+            </label>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section id="seasonRound" class="section-block admin-two-column">
+      <section class="admin-section-card">
+        <div class="section-title compact-title">
+          <div>
+            <p class="eyebrow">Season</p>
+            <h2>시즌 설정</h2>
+          </div>
+        </div>
+        <form id="seasonForm" class="admin-form compact-form">
+          <label class="input-group"><span>시즌 번호</span><input name="number" type="number" min="1"></label>
+          <label class="input-group"><span>시즌 이름</span><input name="name" type="text"></label>
+          <label class="input-group"><span>시작일</span><input name="startDate" type="date"></label>
+          <label class="input-group full-span"><span>시즌 메모</span><textarea name="memo" rows="3"></textarea></label>
+          <button class="primary-button full-span" type="submit">시즌 저장</button>
+        </form>
+      </section>
+
+      <section class="admin-section-card">
+        <div class="section-title compact-title">
+          <div>
+            <p class="eyebrow">Round</p>
+            <h2>라운드 운영</h2>
+          </div>
+        </div>
+        <div class="button-column">
+          <button id="nextRound" class="primary-button" type="button">새 라운드 진행</button>
+        </div>
+        <form id="marketStateForm" class="admin-form compact-form market-form">
+          <label class="input-group">
+            <span>시장 심리</span>
+            <select name="sentiment">
+              <option value="공포">공포</option>
+              <option value="중립">중립</option>
+              <option value="탐욕">탐욕</option>
+            </select>
+          </label>
+          <label class="input-group"><span>유동성</span><input name="liquidity" type="number" min="0" max="100"></label>
+          <label class="input-group"><span>변동성</span><input name="volatility" type="number" min="0" max="100"></label>
+          <label class="input-group"><span>IPO 시장 온도</span><input name="ipoTemperature" type="number" min="0" max="100"></label>
+          <label class="input-group"><span>상장폐지 공포</span><input name="delistingFear" type="number" min="0" max="100"></label>
+          <button class="ghost-button full-span" type="submit">시장 상태 저장</button>
+        </form>
+      </section>
+    </section>
+
+    <section id="marketShock" class="section-block admin-section-card">
+      <div class="section-title compact-title">
+        <div>
+          <p class="eyebrow">Market Shock</p>
+          <h2>시장 충격</h2>
+        </div>
+      </div>
+      <div class="shock-grid grouped-buttons">
+        <button class="ghost-button" type="button" data-shock="rate-shock">금리 충격</button>
+        <button class="ghost-button" type="button" data-shock="liquidity-crisis">유동성 위기</button>
+        <button class="ghost-button" type="button" data-shock="ai-bubble">AI 버블</button>
+        <button class="ghost-button" type="button" data-shock="airline-bad-news">항공 악재</button>
+        <button class="ghost-button" type="button" data-shock="energy-shock">에너지 쇼크</button>
+        <button class="ghost-button" type="button" data-shock="ipo-overheat">공모주 과열</button>
+        <button class="ghost-button" type="button" data-shock="delisting-fear">상장폐지 공포</button>
+      </div>
+    </section>
+
+    <section id="companyActions" class="section-block admin-two-column">
+      <form id="forceEventForm" class="admin-form admin-section-card">
+        <h2>기업 이벤트</h2>
+        <label class="input-group">
+          <span>기업</span>
+          <select id="forceCompany" name="company" required></select>
+        </label>
+        <label class="input-group">
+          <span>이벤트</span>
+          <select name="eventKind" required>
+            <option value="good">호재</option>
+            <option value="bad">악재</option>
+            <option value="rumor">루머</option>
+            <option value="disclosure">공시</option>
+            <option value="report">리포트</option>
+            <option value="halt">거래정지</option>
+            <option value="ipo">IPO</option>
+            <option value="delistingReview">상장폐지 심사</option>
+          </select>
+        </label>
+        <button class="primary-button full-span" type="submit">현재 라운드에 추가</button>
+      </form>
+
+      <form id="customForm" class="admin-form admin-section-card">
+        <h2>수동 콘텐츠 등록</h2>
+        <label class="input-group">
+          <span>종류</span>
+          <select name="kind" required>
+            <option value="news">뉴스</option>
+            <option value="rumors">루머</option>
+            <option value="disclosures">공시</option>
+            <option value="reports">리포트</option>
+          </select>
+        </label>
+        <label class="input-group"><span>기업</span><select id="customCompany" name="company" required></select></label>
+        <label class="input-group">
+          <span>표면 신호</span>
+          <select name="direction" required>
+            <option value="상승">긍정 단서</option>
+            <option value="하락">부담 단서</option>
+            <option value="중립">확인 대기</option>
+            <option value="혼조">해석 분산</option>
+            <option value="루머">미확인</option>
+          </select>
+        </label>
+        <label class="input-group">
+          <span>민감도</span>
+          <select name="impactStrength">
+            <option value="중간">보통</option>
+            <option value="낮음">낮음</option>
+            <option value="높음">높음</option>
+            <option value="매우 높음">매우 높음</option>
+          </select>
+        </label>
+        <label class="input-group"><span>분류/의견</span><input name="type" type="text" placeholder="예: 유상증자, 관망"></label>
+        <label class="input-group">
+          <span>루머 신뢰도</span>
+          <select name="credibility">
+            <option value="보통">보통</option>
+            <option value="낮음">낮음</option>
+            <option value="높음">높음</option>
+          </select>
+        </label>
+        <label class="input-group full-span"><span>제목</span><input name="title" type="text" required></label>
+        <label class="input-group full-span"><span>요약</span><textarea name="summary" rows="3" required></textarea></label>
+        <label class="input-group full-span"><span>본문</span><textarea name="body" rows="4"></textarea></label>
+        <button class="primary-button full-span" type="submit">수동 콘텐츠 저장</button>
+      </form>
+    </section>
+
+    <section id="contentEditor" class="section-block admin-section-card">
+      <div class="section-title compact-title">
+        <div>
+          <p class="eyebrow">Content Editor</p>
+          <h2>콘텐츠 수정</h2>
+        </div>
+        <span id="contentEditorCount" class="count-pill"></span>
+      </div>
+      <section class="toolbar editor-toolbar no-top-margin">
+        <label class="input-group">
+          <span>검색</span>
+          <input id="contentEditSearch" type="search" placeholder="제목, 기업, 요약 검색">
+        </label>
+        <label class="input-group">
+          <span>콘텐츠 종류</span>
+          <select id="contentEditFilter"></select>
+        </label>
+        <label class="input-group">
+          <span>출처</span>
+          <select id="contentEditSource">
+            <option value="all">전체 출처</option>
+            <option value="auto">자동</option>
+            <option value="battle">본게임</option>
+            <option value="admin">수동</option>
+            <option value="forced">강제</option>
+            <option value="shock">충격</option>
+          </select>
+        </label>
+        <label class="input-group">
+          <span>표면 신호</span>
+          <select id="contentEditDirection">
+            <option value="all">전체 신호</option>
+            <option value="상승">긍정 단서</option>
+            <option value="하락">부담 단서</option>
+            <option value="중립">확인 대기</option>
+            <option value="혼조">해석 분산</option>
+            <option value="루머">미확인</option>
+          </select>
+        </label>
+      </section>
+      <div id="contentEditorList" class="content-editor-list"></div>
+      <p id="contentEditorEmpty" class="empty-message" hidden>조건에 맞는 콘텐츠가 없습니다.</p>
+    </section>
+
+    <section id="roundHistory" class="section-block admin-section-card">
+      <div class="section-title compact-title">
+        <div>
+          <p class="eyebrow">Round History</p>
+          <h2>라운드 히스토리</h2>
+        </div>
+      </div>
+      <div id="roundLogList" class="round-history-list"></div>
+      <p id="roundLogEmpty" class="empty-message" hidden>저장된 라운드 로그가 없습니다.</p>
+    </section>
+
+    <section id="backupPanel" class="section-block admin-two-column">
+      <section class="admin-section-card">
+        <div class="section-title compact-title">
+          <div>
+            <p class="eyebrow">Manual Items</p>
+            <h2>수동 입력 목록</h2>
+          </div>
+        </div>
+        <div id="customList" class="custom-list"></div>
+        <p id="customEmpty" class="empty-message" hidden>아직 저장된 수동 입력이 없습니다.</p>
+      </section>
+
+      <section class="admin-section-card danger-zone">
+        <div class="section-title compact-title">
+          <div>
+            <p class="eyebrow">Backup</p>
+            <h2>백업/복구</h2>
+          </div>
+        </div>
+        <div class="button-column">
+          <button id="exportBackup" class="ghost-button" type="button">JSON 내보내기</button>
+          <label class="file-button">
+            JSON 불러오기
+            <input id="importBackup" type="file" accept="application/json">
+          </label>
+          <button id="clearCustom" class="danger-button" type="button">수동 콘텐츠 전체 삭제</button>
+          <button id="resetAllData" class="danger-button" type="button">전체 초기화</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>관리자 데이터는 현재 브라우저 localStorage에 저장됩니다.</p>
+  </footer>
+
+  <script src="js/market-admin-adapter.js?v=ma-direct-1"></script>
+
+  <script src="js/data.js?v=mb-link-3"></script>
+  <script src="js/storage.js?v=mb-link-3"></script>
+  <script src="js/engine.js?v=mb-link-3"></script>
+  <script src="js/main.js?v=mb-link-3"></script>
+  <script src="js/admin-guard.js?v=mb-admin-1"></script>
+  <script src="js/firebase-link.js?v=mb-link-3"></script>
+</body>
+</html>

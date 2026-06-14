@@ -1,0 +1,1203 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Market Board 홈" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=e5]: MB
+        - strong [ref=e7]: Market Board
+      - navigation "주요 메뉴" [ref=e8]:
+        - link "시장요약" [ref=e9] [cursor=pointer]:
+          - /url: index.html
+        - link "기업정보" [ref=e10] [cursor=pointer]:
+          - /url: companies.html
+        - link "일정표" [ref=e11] [cursor=pointer]:
+          - /url: calendar.html
+        - link "루머게시판" [ref=e12] [cursor=pointer]:
+          - /url: rumors.html
+        - link "공시센터" [ref=e13] [cursor=pointer]:
+          - /url: disclosures.html
+        - link "애널리스트 리포트" [ref=e14] [cursor=pointer]:
+          - /url: reports.html
+        - link "관리자" [ref=e15] [cursor=pointer]:
+          - /url: admin.html
+  - main [ref=e16]:
+    - generic [ref=e17]:
+      - paragraph [ref=e18]: Control Room
+      - heading "관리자 운영실" [level=1] [ref=e19]
+      - paragraph [ref=e20]: 시즌, 라운드, 시장 충격, 기업 이벤트, 콘텐츠 수정, 백업을 한 화면에서 관리합니다.
+    - generic [ref=e21]:
+      - generic [ref=e23]:
+        - paragraph [ref=e24]: Admin Dashboard
+        - heading "운영 대시보드" [level=2] [ref=e25]
+      - generic [ref=e26]:
+        - article [ref=e27]:
+          - generic [ref=e28]: 현재 시즌
+          - strong [ref=e29]: 1 · Capital Season
+        - article [ref=e30]:
+          - generic [ref=e31]: 현재 라운드
+          - strong [ref=e32]: 1R
+        - article [ref=e33]:
+          - generic [ref=e34]: 뉴스 수
+          - strong [ref=e35]: "18"
+        - article [ref=e36]:
+          - generic [ref=e37]: 루머 수
+          - strong [ref=e38]: "14"
+        - article [ref=e39]:
+          - generic [ref=e40]: 공시 수
+          - strong [ref=e41]: "13"
+        - article [ref=e42]:
+          - generic [ref=e43]: 리포트 수
+          - strong [ref=e44]: "10"
+        - article [ref=e45]:
+          - generic [ref=e46]: 일정 수
+          - strong [ref=e47]: "10"
+        - article [ref=e48]:
+          - generic [ref=e49]: 본게임 연동
+          - strong [ref=e50]: 대기
+        - article [ref=e51]:
+          - generic [ref=e52]: 최근 시장 충격
+          - strong [ref=e53]: 없음
+        - article [ref=e54]:
+          - generic [ref=e55]: 최근 강제 이벤트
+          - strong [ref=e56]: 없음
+    - generic [ref=e57]:
+      - generic [ref=e58]:
+        - generic [ref=e59]: 최근 작업
+        - strong [ref=e60]: 초기 라운드 자동 생성
+      - time [ref=e61]: 06. 13. 오후 04:26
+    - navigation "관리자 빠른 이동" [ref=e62]:
+      - link "본게임 연동" [ref=e63] [cursor=pointer]:
+        - /url: "#battleSync"
+      - link "라운드" [ref=e64] [cursor=pointer]:
+        - /url: "#seasonRound"
+      - link "시장 충격" [ref=e65] [cursor=pointer]:
+        - /url: "#marketShock"
+      - link "기업 이벤트" [ref=e66] [cursor=pointer]:
+        - /url: "#companyActions"
+      - link "콘텐츠 수정" [ref=e67] [cursor=pointer]:
+        - /url: "#contentEditor"
+      - link "히스토리" [ref=e68] [cursor=pointer]:
+        - /url: "#roundHistory"
+      - link "백업" [ref=e69] [cursor=pointer]:
+        - /url: "#backupPanel"
+    - generic [ref=e70]:
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - paragraph [ref=e73]: Market Battle Link
+          - heading "본게임 가져오기" [level=2] [ref=e74]
+        - generic [ref=e75]: 연동 대기
+      - article [ref=e77]:
+        - generic [ref=e78]: Market Battle
+        - strong [ref=e79]: 본게임 시장을 아직 가져오지 않았습니다.
+        - paragraph [ref=e80]: 게임 화면에서 포털로 복사한 뒤 이곳에서 가져오면 현재 종목 흐름이 정보 포털에 반영됩니다.
+      - generic "본게임 연동 순서" [ref=e81]:
+        - article [ref=e82]:
+          - generic [ref=e83]: "1"
+          - strong [ref=e84]: 본게임에서 복사
+          - paragraph [ref=e85]: Market Battle 게임 화면에서 포털로 복사 버튼을 누릅니다.
+        - article [ref=e86]:
+          - generic [ref=e87]: "2"
+          - strong [ref=e88]: 여기서 가져오기
+          - paragraph [ref=e89]: 아래 버튼으로 클립보드의 시장 데이터를 불러옵니다.
+        - article [ref=e90]:
+          - generic [ref=e91]: "3"
+          - strong [ref=e92]: 포털 자동 반영
+          - paragraph [ref=e93]: 뉴스, 일정, 루머, 기업 현황이 현재 라운드에 연결됩니다.
+      - generic [ref=e94]:
+        - button "복사한 시장 데이터 가져오기" [ref=e95] [cursor=pointer]
+        - button "가져온 데이터 비우기" [ref=e96] [cursor=pointer]
+      - group [ref=e97]:
+        - generic "직접 붙여넣기 / 파일 불러오기 +" [ref=e98] [cursor=pointer]
+    - generic [ref=e99]:
+      - generic [ref=e100]:
+        - generic [ref=e102]:
+          - paragraph [ref=e103]: Season
+          - heading "시즌 설정" [level=2] [ref=e104]
+        - generic [ref=e105]:
+          - generic [ref=e106]:
+            - generic [ref=e107]: 시즌 번호
+            - spinbutton "시즌 번호" [ref=e108]: "1"
+          - generic [ref=e109]:
+            - generic [ref=e110]: 시즌 이름
+            - textbox "시즌 이름" [ref=e111]: Capital Season
+          - generic [ref=e112]:
+            - generic [ref=e113]: 시작일
+            - textbox "시작일" [ref=e114]: 2026-06-13
+          - generic [ref=e115]:
+            - generic [ref=e116]: 시즌 메모
+            - textbox "시즌 메모" [ref=e117]: Market Battle 운영 시즌
+          - button "시즌 저장" [ref=e118] [cursor=pointer]
+      - generic [ref=e119]:
+        - generic [ref=e121]:
+          - paragraph [ref=e122]: Round
+          - heading "라운드 운영" [level=2] [ref=e123]
+        - button "새 라운드 진행" [ref=e125] [cursor=pointer]
+        - generic [ref=e126]:
+          - generic [ref=e127]:
+            - generic [ref=e128]: 시장 심리
+            - combobox "시장 심리" [ref=e129]:
+              - option "공포"
+              - option "중립" [selected]
+              - option "탐욕"
+          - generic [ref=e130]:
+            - generic [ref=e131]: 유동성
+            - spinbutton "유동성" [ref=e132]: "66"
+          - generic [ref=e133]:
+            - generic [ref=e134]: 변동성
+            - spinbutton "변동성" [ref=e135]: "63"
+          - generic [ref=e136]:
+            - generic [ref=e137]: IPO 시장 온도
+            - spinbutton "IPO 시장 온도" [ref=e138]: "56"
+          - generic [ref=e139]:
+            - generic [ref=e140]: 상장폐지 공포
+            - spinbutton "상장폐지 공포" [ref=e141]: "52"
+          - button "시장 상태 저장" [ref=e142] [cursor=pointer]
+    - generic [ref=e143]:
+      - generic [ref=e145]:
+        - paragraph [ref=e146]: Market Shock
+        - heading "시장 충격" [level=2] [ref=e147]
+      - generic [ref=e148]:
+        - button "금리 충격" [ref=e149] [cursor=pointer]
+        - button "유동성 위기" [ref=e150] [cursor=pointer]
+        - button "AI 버블" [ref=e151] [cursor=pointer]
+        - button "항공 악재" [ref=e152] [cursor=pointer]
+        - button "에너지 쇼크" [ref=e153] [cursor=pointer]
+        - button "공모주 과열" [ref=e154] [cursor=pointer]
+        - button "상장폐지 공포" [ref=e155] [cursor=pointer]
+    - generic [ref=e156]:
+      - generic [ref=e157]:
+        - heading "기업 이벤트" [level=2] [ref=e158]
+        - generic [ref=e159]:
+          - generic [ref=e160]: 기업
+          - combobox "기업" [ref=e161]:
+            - option "기업 선택" [selected]
+            - option "네코전자 / NEKO"
+            - option "바나나항공 / BANA"
+            - option "달빛식품 / MOON"
+            - option "고래에너지 / WHAL"
+            - option "픽셀게임즈 / PIXL"
+            - option "민트바이오 / MINT"
+            - option "철갑물류 / IRON"
+            - option "구름은행 / CLDB"
+            - option "로켓모빌리티 / ROKT"
+            - option "버섯건설 / MUSH"
+            - option "레몬클라우드 / LEMN"
+            - option "스파크패션 / SPRK"
+            - option "오로라미디어 / AURA"
+            - option "방패보안 / SHLD"
+            - option "푸른소재 / BLUE"
+            - option "마블스쿨 / MRBL"
+            - option "달빛전자 / DALB"
+            - option "구름소프트 / CLDS"
+            - option "번개모빌리티 / BOLT"
+            - option "바다식품 / BADA"
+            - option "별빛바이오 / STAR"
+            - option "한입게임즈 / BITE"
+            - option "초록에너지 / GREN"
+            - option "솜사탕유통 / COTN"
+            - option "무지개항공 / RAIN"
+            - option "도토리금융 / ACRN"
+            - option "은하반도체 / GLXY"
+            - option "포근화학 / SOFT"
+            - option "두근로보틱스 / HART"
+            - option "새벽엔터 / DAWN"
+            - option "고래물산 / WMLS"
+            - option "민들레제약 / DNDR"
+            - option "떡상테크 / TTEK"
+            - option "유니콘소프트 / UNIC"
+            - option "미래모빌 / MIRA"
+            - option "첫걸음바이오 / STEP"
+            - option "샛별에너지 / SENE"
+            - option "루키게임즈 / ROOK"
+            - option "신화엔터 / MYTH"
+            - option "퀀텀반도체 / QNTM"
+        - generic [ref=e162]:
+          - generic [ref=e163]: 이벤트
+          - combobox "이벤트" [ref=e164]:
+            - option "호재" [selected]
+            - option "악재"
+            - option "루머"
+            - option "공시"
+            - option "리포트"
+            - option "거래정지"
+            - option "IPO"
+            - option "상장폐지 심사"
+        - button "현재 라운드에 추가" [ref=e165] [cursor=pointer]
+      - generic [ref=e166]:
+        - heading "수동 콘텐츠 등록" [level=2] [ref=e167]
+        - generic [ref=e168]:
+          - generic [ref=e169]: 종류
+          - combobox "종류" [ref=e170]:
+            - option "뉴스" [selected]
+            - option "루머"
+            - option "공시"
+            - option "리포트"
+        - generic [ref=e171]:
+          - generic [ref=e172]: 기업
+          - combobox "기업" [ref=e173]:
+            - option "기업 선택" [selected]
+            - option "네코전자"
+            - option "바나나항공"
+            - option "달빛식품"
+            - option "고래에너지"
+            - option "픽셀게임즈"
+            - option "민트바이오"
+            - option "철갑물류"
+            - option "구름은행"
+            - option "로켓모빌리티"
+            - option "버섯건설"
+            - option "레몬클라우드"
+            - option "스파크패션"
+            - option "오로라미디어"
+            - option "방패보안"
+            - option "푸른소재"
+            - option "마블스쿨"
+            - option "달빛전자"
+            - option "구름소프트"
+            - option "번개모빌리티"
+            - option "바다식품"
+            - option "별빛바이오"
+            - option "한입게임즈"
+            - option "초록에너지"
+            - option "솜사탕유통"
+            - option "무지개항공"
+            - option "도토리금융"
+            - option "은하반도체"
+            - option "포근화학"
+            - option "두근로보틱스"
+            - option "새벽엔터"
+            - option "고래물산"
+            - option "민들레제약"
+            - option "떡상테크"
+            - option "유니콘소프트"
+            - option "미래모빌"
+            - option "첫걸음바이오"
+            - option "샛별에너지"
+            - option "루키게임즈"
+            - option "신화엔터"
+            - option "퀀텀반도체"
+        - generic [ref=e174]:
+          - generic [ref=e175]: 표면 신호
+          - combobox "표면 신호" [ref=e176]:
+            - option "긍정 단서" [selected]
+            - option "부담 단서"
+            - option "확인 대기"
+            - option "해석 분산"
+            - option "미확인"
+        - generic [ref=e177]:
+          - generic [ref=e178]: 민감도
+          - combobox "민감도" [ref=e179]:
+            - option "보통" [selected]
+            - option "낮음"
+            - option "높음"
+            - option "매우 높음"
+        - generic [ref=e180]:
+          - generic [ref=e181]: 분류/의견
+          - textbox "분류/의견" [ref=e182]:
+            - /placeholder: "예: 유상증자, 관망"
+        - generic [ref=e183]:
+          - generic [ref=e184]: 루머 신뢰도
+          - combobox "루머 신뢰도" [ref=e185]:
+            - option "보통" [selected]
+            - option "낮음"
+            - option "높음"
+        - generic [ref=e186]:
+          - generic [ref=e187]: 제목
+          - textbox "제목" [ref=e188]
+        - generic [ref=e189]:
+          - generic [ref=e190]: 요약
+          - textbox "요약" [ref=e191]
+        - generic [ref=e192]:
+          - generic [ref=e193]: 본문
+          - textbox "본문" [ref=e194]
+        - button "수동 콘텐츠 저장" [ref=e195] [cursor=pointer]
+    - generic [ref=e196]:
+      - generic [ref=e197]:
+        - generic [ref=e198]:
+          - paragraph [ref=e199]: Content Editor
+          - heading "콘텐츠 수정" [level=2] [ref=e200]
+        - generic [ref=e201]: 55건
+      - generic [ref=e202]:
+        - generic [ref=e203]:
+          - generic [ref=e204]: 검색
+          - searchbox "검색" [ref=e205]
+        - generic [ref=e206]:
+          - generic [ref=e207]: 콘텐츠 종류
+          - combobox "콘텐츠 종류" [ref=e208]:
+            - option "전체 콘텐츠" [selected]
+            - option "뉴스"
+            - option "루머"
+            - option "공시"
+            - option "리포트"
+        - generic [ref=e209]:
+          - generic [ref=e210]: 출처
+          - combobox "출처" [ref=e211]:
+            - option "전체 출처" [selected]
+            - option "자동"
+            - option "본게임"
+            - option "수동"
+            - option "강제"
+            - option "충격"
+        - generic [ref=e212]:
+          - generic [ref=e213]: 표면 신호
+          - combobox "표면 신호" [ref=e214]:
+            - option "전체 신호" [selected]
+            - option "긍정 단서"
+            - option "부담 단서"
+            - option "확인 대기"
+            - option "해석 분산"
+            - option "미확인"
+      - generic [ref=e215]:
+        - group [ref=e216]:
+          - generic "뉴스 상위권 플레이어 방어 움직임, 첫걸음바이오 수급 판단 어려워져 해석 분산 +" [ref=e217] [cursor=pointer]:
+            - generic [ref=e218]: 뉴스
+            - strong [ref=e219]: 상위권 플레이어 방어 움직임, 첫걸음바이오 수급 판단 어려워져
+            - generic [ref=e220]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e221]:
+          - generic "뉴스 상장폐지 심사 기준 강화 예고, 루키게임즈 재무 안정성 주목 해석 분산 +" [ref=e222] [cursor=pointer]:
+            - generic [ref=e223]: 뉴스
+            - strong [ref=e224]: 상장폐지 심사 기준 강화 예고, 루키게임즈 재무 안정성 주목
+            - generic [ref=e225]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e226]:
+          - generic "뉴스 상장폐지 사례 발생 후 위험 회피 심리 확대 해석 분산 +" [ref=e227] [cursor=pointer]:
+            - generic [ref=e228]: 뉴스
+            - strong [ref=e229]: 상장폐지 사례 발생 후 위험 회피 심리 확대
+            - generic [ref=e230]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e231]:
+          - generic "뉴스 구름은행, 기준가 대비 괴리 확대 확인 대기 +" [ref=e232] [cursor=pointer]:
+            - generic [ref=e233]: 뉴스
+            - strong [ref=e234]: 구름은행, 기준가 대비 괴리 확대
+            - generic [ref=e235]: 확인 대기
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기" [selected]
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e236]:
+          - generic "뉴스 보조금 재배치 논의, 떡상테크에 의외의 수혜 가능성 긍정 단서 +" [ref=e237] [cursor=pointer]:
+            - generic [ref=e238]: 뉴스
+            - strong [ref=e239]: 보조금 재배치 논의, 떡상테크에 의외의 수혜 가능성
+            - generic [ref=e240]: 긍정 단서
+            - text: +
+          - option "긍정 단서" [selected]
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e241]:
+          - generic "뉴스 미래모빌, 매출 인식 방식 질의에 보수적 시각 증가 해석 분산 +" [ref=e242] [cursor=pointer]:
+            - generic [ref=e243]: 뉴스
+            - strong [ref=e244]: 미래모빌, 매출 인식 방식 질의에 보수적 시각 증가
+            - generic [ref=e245]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e246]:
+          - generic "뉴스 고래물산, 이용 데이터 개선으로 숨은 성장성 재평가 해석 분산 +" [ref=e247] [cursor=pointer]:
+            - generic [ref=e248]: 뉴스
+            - strong [ref=e249]: 고래물산, 이용 데이터 개선으로 숨은 성장성 재평가
+            - generic [ref=e250]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e251]:
+          - generic "뉴스 오로라미디어, 예비 매출 지표 개선으로 실적 기대 재점화 해석 분산 +" [ref=e252] [cursor=pointer]:
+            - generic [ref=e253]: 뉴스
+            - strong [ref=e254]: 오로라미디어, 예비 매출 지표 개선으로 실적 기대 재점화
+            - generic [ref=e255]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e256]:
+          - generic "뉴스 달빛식품, 다른 업종과의 공동 프로젝트 준비설 해석 분산 +" [ref=e257] [cursor=pointer]:
+            - generic [ref=e258]: 뉴스
+            - strong [ref=e259]: 달빛식품, 다른 업종과의 공동 프로젝트 준비설
+            - generic [ref=e260]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e261]:
+          - generic "뉴스 Market City 정책 초안 공개, AI·전자 업종 해석 엇갈려 긍정 단서 +" [ref=e262] [cursor=pointer]:
+            - generic [ref=e263]: 뉴스
+            - strong [ref=e264]: Market City 정책 초안 공개, AI·전자 업종 해석 엇갈려
+            - generic [ref=e265]: 긍정 단서
+            - text: +
+          - option "긍정 단서" [selected]
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e266]:
+          - generic "뉴스 바다식품, 인수합병 후보군에 포함됐다는 관측 해석 분산 +" [ref=e267] [cursor=pointer]:
+            - generic [ref=e268]: 뉴스
+            - strong [ref=e269]: 바다식품, 인수합병 후보군에 포함됐다는 관측
+            - generic [ref=e270]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e271]:
+          - generic "뉴스 퀀텀반도체, 호가 잔량 불균형 관측 긍정 단서 +" [ref=e272] [cursor=pointer]:
+            - generic [ref=e273]: 뉴스
+            - strong [ref=e274]: 퀀텀반도체, 호가 잔량 불균형 관측
+            - generic [ref=e275]: 긍정 단서
+            - text: +
+          - option "긍정 단서" [selected]
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e276]:
+          - generic "뉴스 마켓 인버스·레버리지 수요 증가, 구름소프트 단기 변동성 확대 해석 분산 +" [ref=e277] [cursor=pointer]:
+            - generic [ref=e278]: 뉴스
+            - strong [ref=e279]: 마켓 인버스·레버리지 수요 증가, 구름소프트 단기 변동성 확대
+            - generic [ref=e280]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e281]:
+          - generic "뉴스 은하반도체 관련 루머 확산, 회사는 확인 거부 해석 분산 +" [ref=e282] [cursor=pointer]:
+            - generic [ref=e283]: 뉴스
+            - strong [ref=e284]: 은하반도체 관련 루머 확산, 회사는 확인 거부
+            - generic [ref=e285]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e286]:
+          - generic "뉴스 고래물산, 배당 확대 기대에 방어 매수 유입 긍정 단서 +" [ref=e287] [cursor=pointer]:
+            - generic [ref=e288]: 뉴스
+            - strong [ref=e289]: 고래물산, 배당 확대 기대에 방어 매수 유입
+            - generic [ref=e290]: 긍정 단서
+            - text: +
+          - option "긍정 단서" [selected]
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e291]:
+          - generic "뉴스 샛별에너지, 회사분할 가능성 거론에 가치 재평가 기대 해석 분산 +" [ref=e292] [cursor=pointer]:
+            - generic [ref=e293]: 뉴스
+            - strong [ref=e294]: 샛별에너지, 회사분할 가능성 거론에 가치 재평가 기대
+            - generic [ref=e295]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e296]:
+          - generic "뉴스 방패보안, 무상증자 기대감으로 거래량 증가 해석 분산 +" [ref=e297] [cursor=pointer]:
+            - generic [ref=e298]: 뉴스
+            - strong [ref=e299]: 방패보안, 무상증자 기대감으로 거래량 증가
+            - generic [ref=e300]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e301]:
+          - generic "뉴스 새벽엔터, 경쟁사 공급 차질 속 반사 수요 기대 해석 분산 +" [ref=e302] [cursor=pointer]:
+            - generic [ref=e303]: 뉴스
+            - strong [ref=e304]: 새벽엔터, 경쟁사 공급 차질 속 반사 수요 기대
+            - generic [ref=e305]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e306]:
+          - generic "루머 달빛식품 핵심 임원이 휴직했다는 말 해석 분산 +" [ref=e307] [cursor=pointer]:
+            - generic [ref=e308]: 루머
+            - strong [ref=e309]: 달빛식품 핵심 임원이 휴직했다는 말
+            - generic [ref=e310]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e311]:
+          - generic "루머 방패보안 관련 공모주 청약 경쟁률이 높다는 소문 확인 대기 +" [ref=e312] [cursor=pointer]:
+            - generic [ref=e313]: 루머
+            - strong [ref=e314]: 방패보안 관련 공모주 청약 경쟁률이 높다는 소문
+            - generic [ref=e315]: 확인 대기
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기" [selected]
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e316]:
+          - generic "루머 버섯건설, 상장폐지 가능성이라는 자극적 글 확산 해석 분산 +" [ref=e317] [cursor=pointer]:
+            - generic [ref=e318]: 루머
+            - strong [ref=e319]: 버섯건설, 상장폐지 가능성이라는 자극적 글 확산
+            - generic [ref=e320]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e321]:
+          - generic "루머 고래에너지, 특별 배당 가능성이 내부 채널에서 언급됐다는 말 해석 분산 +" [ref=e322] [cursor=pointer]:
+            - generic [ref=e323]: 루머
+            - strong [ref=e324]: 고래에너지, 특별 배당 가능성이 내부 채널에서 언급됐다는 말
+            - generic [ref=e325]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e326]:
+          - generic "루머 첫걸음바이오, 거래정지 사전 점검 명단에 올랐다는 괴소문 해석 분산 +" [ref=e327] [cursor=pointer]:
+            - generic [ref=e328]: 루머
+            - strong [ref=e329]: 첫걸음바이오, 거래정지 사전 점검 명단에 올랐다는 괴소문
+            - generic [ref=e330]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e331]:
+          - generic "루머 퀀텀반도체, 보안 사고를 숨겼다는 주장 해석 분산 +" [ref=e332] [cursor=pointer]:
+            - generic [ref=e333]: 루머
+            - strong [ref=e334]: 퀀텀반도체, 보안 사고를 숨겼다는 주장
+            - generic [ref=e335]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e336]:
+          - generic "루머 루키게임즈 신제품 출시가 미뤄졌다는 협력사발 소문 해석 분산 +" [ref=e337] [cursor=pointer]:
+            - generic [ref=e338]: 루머
+            - strong [ref=e339]: 루키게임즈 신제품 출시가 미뤄졌다는 협력사발 소문
+            - generic [ref=e340]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e341]:
+          - generic "루머 방패보안, 대형 보안 계약을 따냈다는 말 해석 분산 +" [ref=e342] [cursor=pointer]:
+            - generic [ref=e343]: 루머
+            - strong [ref=e344]: 방패보안, 대형 보안 계약을 따냈다는 말
+            - generic [ref=e345]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e346]:
+          - generic "루머 미디어 신규상장 후보가 새벽엔터 고객을 빼앗는다는 말 긍정 단서 +" [ref=e347] [cursor=pointer]:
+            - generic [ref=e348]: 루머
+            - strong [ref=e349]: 미디어 신규상장 후보가 새벽엔터 고객을 빼앗는다는 말
+            - generic [ref=e350]: 긍정 단서
+            - text: +
+          - option "긍정 단서" [selected]
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e351]:
+          - generic "루머 신화엔터 신제품 베타 반응이 예상보다 좋다는 캡처 확산 해석 분산 +" [ref=e352] [cursor=pointer]:
+            - generic [ref=e353]: 루머
+            - strong [ref=e354]: 신화엔터 신제품 베타 반응이 예상보다 좋다는 캡처 확산
+            - generic [ref=e355]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e356]:
+          - generic "루머 무지개항공, 상장폐지 심사 예비 검토설 해석 분산 +" [ref=e357] [cursor=pointer]:
+            - generic [ref=e358]: 루머
+            - strong [ref=e359]: 무지개항공, 상장폐지 심사 예비 검토설
+            - generic [ref=e360]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e361]:
+          - generic "루머 로켓모빌리티, 인수합병 티저 문서에 이름이 있었다는 주장 해석 분산 +" [ref=e362] [cursor=pointer]:
+            - generic [ref=e363]: 루머
+            - strong [ref=e364]: 로켓모빌리티, 인수합병 티저 문서에 이름이 있었다는 주장
+            - generic [ref=e365]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e366]:
+          - generic "루머 퀀텀반도체, 비공개 전략 투자 유치 가능성 해석 분산 +" [ref=e367] [cursor=pointer]:
+            - generic [ref=e368]: 루머
+            - strong [ref=e369]: 퀀텀반도체, 비공개 전략 투자 유치 가능성
+            - generic [ref=e370]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e371]:
+          - generic "루머 로켓모빌리티, 관리종목 지정 가능성을 언급한 익명 리포트 해석 분산 +" [ref=e372] [cursor=pointer]:
+            - generic [ref=e373]: 루머
+            - strong [ref=e374]: 로켓모빌리티, 관리종목 지정 가능성을 언급한 익명 리포트
+            - generic [ref=e375]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e376]:
+          - generic "공시 번개모빌리티, 감사 절차 지연 안내 해석 분산 +" [ref=e377] [cursor=pointer]:
+            - generic [ref=e378]: 공시
+            - strong [ref=e379]: 번개모빌리티, 감사 절차 지연 안내
+            - generic [ref=e380]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e381]:
+          - generic "공시 미래모빌, 호가 급변 관련 조회공시 요구 해석 분산 +" [ref=e382] [cursor=pointer]:
+            - generic [ref=e383]: 공시
+            - strong [ref=e384]: 미래모빌, 호가 급변 관련 조회공시 요구
+            - generic [ref=e385]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e386]:
+          - generic "공시 무지개항공, 단기 차입금 증가 결정 해석 분산 +" [ref=e387] [cursor=pointer]:
+            - generic [ref=e388]: 공시
+            - strong [ref=e389]: 무지개항공, 단기 차입금 증가 결정
+            - generic [ref=e390]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e391]:
+          - generic "공시 마켓 인버스·레버리지 괴리율 점검 공시 해석 분산 +" [ref=e392] [cursor=pointer]:
+            - generic [ref=e393]: 공시
+            - strong [ref=e394]: 마켓 인버스·레버리지 괴리율 점검 공시
+            - generic [ref=e395]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e396]:
+          - generic "공시 민트바이오, 주요 제품 안전 인증 획득 해석 분산 +" [ref=e397] [cursor=pointer]:
+            - generic [ref=e398]: 공시
+            - strong [ref=e399]: 민트바이오, 주요 제품 안전 인증 획득
+            - generic [ref=e400]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e401]:
+          - generic "공시 퀀텀반도체, Market City 장기 공급 계약 체결 해석 분산 +" [ref=e402] [cursor=pointer]:
+            - generic [ref=e403]: 공시
+            - strong [ref=e404]: 퀀텀반도체, Market City 장기 공급 계약 체결
+            - generic [ref=e405]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e406]:
+          - generic "공시 친환경소재 신규상장 일정 확정 공시 긍정 단서 +" [ref=e407] [cursor=pointer]:
+            - generic [ref=e408]: 공시
+            - strong [ref=e409]: 친환경소재 신규상장 일정 확정 공시
+            - generic [ref=e410]: 긍정 단서
+            - text: +
+          - option "긍정 단서" [selected]
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e411]:
+          - generic "공시 오로라미디어, 자사주 매입 신탁 계약 체결 해석 분산 +" [ref=e412] [cursor=pointer]:
+            - generic [ref=e413]: 공시
+            - strong [ref=e414]: 오로라미디어, 자사주 매입 신탁 계약 체결
+            - generic [ref=e415]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e416]:
+          - generic "공시 구름은행, 임상 중간 결과 제출 긍정 단서 +" [ref=e417] [cursor=pointer]:
+            - generic [ref=e418]: 공시
+            - strong [ref=e419]: 구름은행, 임상 중간 결과 제출
+            - generic [ref=e420]: 긍정 단서
+            - text: +
+          - option "긍정 단서" [selected]
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e421]:
+          - generic "공시 구름소프트, 전략 투자자 대상 전환증권 발행 해석 분산 +" [ref=e422] [cursor=pointer]:
+            - generic [ref=e423]: 공시
+            - strong [ref=e424]: 구름소프트, 전략 투자자 대상 전환증권 발행
+            - generic [ref=e425]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e426]:
+          - generic "공시 신화엔터, 주주 친화 목적 무상증자 결의 해석 분산 +" [ref=e427] [cursor=pointer]:
+            - generic [ref=e428]: 공시
+            - strong [ref=e429]: 신화엔터, 주주 친화 목적 무상증자 결의
+            - generic [ref=e430]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e431]:
+          - generic "공시 민들레제약, 과거 매출 인식 일부 정정 해석 분산 +" [ref=e432] [cursor=pointer]:
+            - generic [ref=e433]: 공시
+            - strong [ref=e434]: 민들레제약, 과거 매출 인식 일부 정정
+            - generic [ref=e435]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e436]:
+          - generic "공시 도토리금융, 전략적 인수합병 양해각서 체결 해석 분산 +" [ref=e437] [cursor=pointer]:
+            - generic [ref=e438]: 공시
+            - strong [ref=e439]: 도토리금융, 전략적 인수합병 양해각서 체결
+            - generic [ref=e440]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e441]:
+          - 'generic "리포트 별빛바이오: 체결 로그는 힌트이지 결론이 아니다 확인 대기 +" [ref=e442] [cursor=pointer]':
+            - generic [ref=e443]: 리포트
+            - strong [ref=e444]: "별빛바이오: 체결 로그는 힌트이지 결론이 아니다"
+            - generic [ref=e445]: 확인 대기
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기" [selected]
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e446]:
+          - generic "리포트 바이오 자금 흐름 개선, 민트바이오 재평가 가능 해석 분산 +" [ref=e447] [cursor=pointer]:
+            - generic [ref=e448]: 리포트
+            - strong [ref=e449]: 바이오 자금 흐름 개선, 민트바이오 재평가 가능
+            - generic [ref=e450]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e451]:
+          - 'generic "리포트 새벽엔터: 법적리스크가 작은 악재를 키운다 해석 분산 +" [ref=e452] [cursor=pointer]':
+            - generic [ref=e453]: 리포트
+            - strong [ref=e454]: "새벽엔터: 법적리스크가 작은 악재를 키운다"
+            - generic [ref=e455]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e456]:
+          - 'generic "리포트 민들레제약: 부채 부담이 선택지를 좁힌다 해석 분산 +" [ref=e457] [cursor=pointer]':
+            - generic [ref=e458]: 리포트
+            - strong [ref=e459]: "민들레제약: 부채 부담이 선택지를 좁힌다"
+            - generic [ref=e460]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e461]:
+          - 'generic "리포트 마블스쿨: 정책 변수의 방향이 아직 열려 있다 해석 분산 +" [ref=e462] [cursor=pointer]':
+            - generic [ref=e463]: 리포트
+            - strong [ref=e464]: "마블스쿨: 정책 변수의 방향이 아직 열려 있다"
+            - generic [ref=e465]: 해석 분산
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산" [selected]
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e466]:
+          - 'generic "리포트 스파크패션: 호가 잔량만 보고 따라가기 어려운 구간 확인 대기 +" [ref=e467] [cursor=pointer]':
+            - generic [ref=e468]: 리포트
+            - strong [ref=e469]: "스파크패션: 호가 잔량만 보고 따라가기 어려운 구간"
+            - generic [ref=e470]: 확인 대기
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기" [selected]
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e471]:
+          - generic "리포트 모빌리티 과열 신호, 미래모빌 추격 매수 주의 확인 대기 +" [ref=e472] [cursor=pointer]:
+            - generic [ref=e473]: 리포트
+            - strong [ref=e474]: 모빌리티 과열 신호, 미래모빌 추격 매수 주의
+            - generic [ref=e475]: 확인 대기
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기" [selected]
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e476]:
+          - 'generic "리포트 번개모빌리티: 숨은 현금흐름 개선이 관측된다 긍정 단서 +" [ref=e477] [cursor=pointer]':
+            - generic [ref=e478]: 리포트
+            - strong [ref=e479]: "번개모빌리티: 숨은 현금흐름 개선이 관측된다"
+            - generic [ref=e480]: 긍정 단서
+            - text: +
+          - option "긍정 단서" [selected]
+          - option "부담 단서"
+          - option "확인 대기"
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e481]:
+          - 'generic "리포트 버섯건설: 성장성은 유효, 가격 반응은 수급에 달림 확인 대기 +" [ref=e482] [cursor=pointer]':
+            - generic [ref=e483]: 리포트
+            - strong [ref=e484]: "버섯건설: 성장성은 유효, 가격 반응은 수급에 달림"
+            - generic [ref=e485]: 확인 대기
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기" [selected]
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+        - group [ref=e486]:
+          - 'generic "리포트 구름소프트: 혁신성 프리미엄은 아직 살아 있다 확인 대기 +" [ref=e487] [cursor=pointer]':
+            - generic [ref=e488]: 리포트
+            - strong [ref=e489]: "구름소프트: 혁신성 프리미엄은 아직 살아 있다"
+            - generic [ref=e490]: 확인 대기
+            - text: +
+          - option "긍정 단서"
+          - option "부담 단서"
+          - option "확인 대기" [selected]
+          - option "해석 분산"
+          - option "미확인"
+          - option "낮음"
+          - option "보통" [selected]
+          - option "높음"
+          - option "매우 높음"
+    - generic [ref=e491]:
+      - generic [ref=e493]:
+        - paragraph [ref=e494]: Round History
+        - heading "라운드 히스토리" [level=2] [ref=e495]
+      - group [ref=e497]:
+        - generic "1R 초기 라운드 자동 생성 06. 13. 오후 04:26 +" [ref=e498] [cursor=pointer]:
+          - generic [ref=e499]: 1R
+          - strong [ref=e500]: 초기 라운드 자동 생성
+          - emphasis [ref=e501]: 06. 13. 오후 04:26
+          - text: +
+    - generic [ref=e502]:
+      - generic [ref=e503]:
+        - generic [ref=e505]:
+          - paragraph [ref=e506]: Manual Items
+          - heading "수동 입력 목록" [level=2] [ref=e507]
+        - paragraph [ref=e508]: 아직 저장된 수동 입력이 없습니다.
+      - generic [ref=e509]:
+        - generic [ref=e511]:
+          - paragraph [ref=e512]: Backup
+          - heading "백업/복구" [level=2] [ref=e513]
+        - generic [ref=e514]:
+          - button "JSON 내보내기" [ref=e515] [cursor=pointer]
+          - generic [ref=e516] [cursor=pointer]: JSON 불러오기
+          - button "수동 콘텐츠 전체 삭제" [ref=e517] [cursor=pointer]
+          - button "전체 초기화" [ref=e518] [cursor=pointer]
+  - contentinfo [ref=e519]:
+    - paragraph [ref=e520]: 관리자 데이터는 현재 브라우저 localStorage에 저장됩니다.
+  - button "맨 위로 이동": 위로

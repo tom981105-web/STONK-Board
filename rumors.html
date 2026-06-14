@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STONK Board | 루머게시판</title>
+  <link rel="stylesheet" href="css/style.css?v=mb-link-3">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="STONK Board 홈">
+        <span class="brand-mark">S</span>
+        <span><strong>STONK <span>Board</span></strong><small>STONK Battle 정보 포털</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="주요 메뉴">
+        <a href="index.html" data-nav="index">시장요약</a>
+        <a href="companies.html" data-nav="companies">기업정보</a>
+        <a href="calendar.html" data-nav="calendar">일정표</a>
+        <a href="rumors.html" data-nav="rumors">루머게시판</a>
+        <a href="disclosures.html" data-nav="disclosures">공시센터</a>
+        <a href="reports.html" data-nav="reports">애널리스트 리포트</a>
+        <a href="admin.html" data-nav="admin">관리자</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="compact-hero">
+      <p class="eyebrow">Rumor Wire</p>
+      <h1>루머게시판</h1>
+      <p>루머는 맞을 수도 틀릴 수도 있습니다. 출처, 신뢰도, 시장 수급이 서로 다르게 움직입니다.</p>
+    </section>
+
+    <section id="pageBrief" class="section-block"></section>
+
+    <section class="toolbar toolbar-narrow" aria-label="루머 필터">
+      <label class="input-group">
+        <span>신뢰도</span>
+        <select id="rumorFilter">
+          <option value="all">전체 신뢰도</option>
+          <option value="낮음">낮음</option>
+          <option value="보통">보통</option>
+          <option value="높음">높음</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="section-block">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Board</p>
+          <h2>시장 루머</h2>
+        </div>
+        <span id="rumorCount" class="count-pill"></span>
+      </div>
+      <div id="rumorList" class="card-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>루머는 게임 내 불확실성을 표현하기 위한 가상 정보입니다.</p>
+  </footer>
+
+  <script src="js/market-admin-adapter.js?v=ma-direct-1"></script>
+
+  <script src="js/data.js?v=mb-link-3"></script>
+  <script src="js/storage.js?v=mb-link-3"></script>
+  <script src="js/engine.js?v=mb-link-3"></script>
+  <script src="js/main.js?v=mb-link-3"></script>
+  <script src="js/firebase-link.js?v=mb-link-3"></script>
+</body>
+</html>

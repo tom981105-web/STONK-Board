@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STONK Board | 공시센터</title>
+  <link rel="stylesheet" href="css/style.css?v=mb-link-3">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="STONK Board 홈">
+        <span class="brand-mark">S</span>
+        <span><strong>STONK <span>Board</span></strong><small>STONK Battle 정보 포털</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="주요 메뉴">
+        <a href="index.html" data-nav="index">시장요약</a>
+        <a href="companies.html" data-nav="companies">기업정보</a>
+        <a href="calendar.html" data-nav="calendar">일정표</a>
+        <a href="rumors.html" data-nav="rumors">루머게시판</a>
+        <a href="disclosures.html" data-nav="disclosures">공시센터</a>
+        <a href="reports.html" data-nav="reports">애널리스트 리포트</a>
+        <a href="admin.html" data-nav="admin">관리자</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="compact-hero">
+      <p class="eyebrow">Disclosure Center</p>
+      <h1>공시센터</h1>
+      <p>배당, 증자, 거래정지, 관리종목, 상장폐지 심사 등 공식 발표 재료를 모아 보여줍니다.</p>
+    </section>
+
+    <section id="pageBrief" class="section-block"></section>
+
+    <section class="toolbar toolbar-narrow" aria-label="공시 필터">
+      <label class="input-group">
+        <span>공시 유형</span>
+        <select id="disclosureFilter"></select>
+      </label>
+    </section>
+
+    <section class="section-block">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Official Notes</p>
+          <h2>기업 공시 목록</h2>
+        </div>
+        <span id="disclosureCount" class="count-pill"></span>
+      </div>
+      <div id="disclosureList" class="notice-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>공시 내용은 Market Battle 세계관의 가상 발표입니다.</p>
+  </footer>
+
+  <script src="js/market-admin-adapter.js?v=ma-direct-1"></script>
+
+  <script src="js/data.js?v=mb-link-3"></script>
+  <script src="js/storage.js?v=mb-link-3"></script>
+  <script src="js/engine.js?v=mb-link-3"></script>
+  <script src="js/main.js?v=mb-link-3"></script>
+  <script src="js/firebase-link.js?v=mb-link-3"></script>
+</body>
+</html>

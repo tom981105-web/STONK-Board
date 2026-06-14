@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STONK Board | 기업정보</title>
+  <link rel="stylesheet" href="css/style.css?v=mb-link-3">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="STONK Board 홈">
+        <span class="brand-mark">S</span>
+        <span><strong>STONK <span>Board</span></strong><small>STONK Battle 정보 포털</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="주요 메뉴">
+        <a href="index.html" data-nav="index">시장요약</a>
+        <a href="companies.html" data-nav="companies">기업정보</a>
+        <a href="calendar.html" data-nav="calendar">일정표</a>
+        <a href="rumors.html" data-nav="rumors">루머게시판</a>
+        <a href="disclosures.html" data-nav="disclosures">공시센터</a>
+        <a href="reports.html" data-nav="reports">애널리스트 리포트</a>
+        <a href="admin.html" data-nav="admin">관리자</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="compact-hero">
+      <p class="eyebrow">Company Book</p>
+      <h1>기업정보</h1>
+      <p>가상 상장사와 신규상장 후보의 공개 프로필입니다. 숨겨진 내부 상태는 엔진이 콘텐츠 생성에만 사용합니다.</p>
+    </section>
+
+    <section id="pageBrief" class="section-block"></section>
+
+    <section class="toolbar" aria-label="기업 검색과 필터">
+      <label class="input-group">
+        <span>검색</span>
+        <input id="companySearch" type="search" placeholder="기업명, 티커, 업종, CEO 검색">
+      </label>
+      <label class="input-group">
+        <span>업종</span>
+        <select id="sectorFilter"></select>
+      </label>
+      <label class="input-group">
+        <span>상태</span>
+        <select id="statusFilter"></select>
+      </label>
+    </section>
+
+    <section class="section-block">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Listings</p>
+          <h2>가상 기업 목록</h2>
+        </div>
+        <span id="companyCount" class="count-pill"></span>
+      </div>
+      <div id="companyList" class="company-grid"></div>
+      <p id="companyEmpty" class="empty-message" hidden>조건에 맞는 기업이 없습니다.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>모든 기업과 지표는 Market Battle 세계관의 가상 설정입니다.</p>
+  </footer>
+
+  <script src="js/market-admin-adapter.js?v=ma-direct-1"></script>
+
+  <script src="js/data.js?v=mb-link-3"></script>
+  <script src="js/storage.js?v=mb-link-3"></script>
+  <script src="js/engine.js?v=mb-link-3"></script>
+  <script src="js/main.js?v=mb-link-3"></script>
+  <script src="js/firebase-link.js?v=mb-link-3"></script>
+</body>
+</html>
