@@ -69,7 +69,6 @@
         <input id="gateCode" class="gate-input" maxlength="6" placeholder="방 코드 6자리" autocomplete="off" spellcheck="false" />
         <button id="gateConnect" class="gate-btn primary" type="button">연결하기</button>
         <p id="gateMsg" class="gate-msg"></p>
-        <button id="gateDemo" class="gate-demo" type="button">연결 없이 둘러보기</button>
         <p class="gate-foot">가상 데이터 정보 포털 · 실제 투자와 무관</p>
       </div>
     `;
@@ -89,14 +88,6 @@
         return;
       }
       connect(code);
-    });
-    gate.querySelector("#gateDemo").addEventListener("click", () => {
-      localStorage.setItem(DEMO_KEY, "1");
-      hideGate();
-      try {
-        window.MarketStorage && window.MarketStorage.clearBattleSnapshot();
-      } catch (e) {}
-      refresh();
     });
   }
 
@@ -270,7 +261,8 @@
     let urlRoom = "";
     try { urlRoom = window.SiteConfig ? window.SiteConfig.getUrlRoomCode() : ""; } catch (e) {}
     const saved = urlRoom || localStorage.getItem(ROOM_KEY);
-    const demo = localStorage.getItem(DEMO_KEY) === "1";
+    // 데모(둘러보기) 모드 제거 — 끼어 있던 기존 플래그도 정리해 게이트가 정상 동작하게 한다
+    try { localStorage.removeItem(DEMO_KEY); } catch (e) {}
 
     // 관리자 페이지는 게이트로 막지 않는다 (저장된 방이 있으면 연결만)
     if (isAdmin) {
@@ -282,14 +274,6 @@
     if (saved) {
       hideGate();
       connect(saved);
-    } else if (demo) {
-      hideGate();
-      try {
-        if (window.MarketStorage && window.MarketStorage.getBattleSnapshot()) {
-          window.MarketStorage.clearBattleSnapshot();
-          refresh();
-        }
-      } catch (e) {}
     } else {
       // 첫 진입: 게이트 노출, 남은 스냅샷 정리
       showGate("");
