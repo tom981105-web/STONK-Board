@@ -21,6 +21,7 @@
     selectedId: null,
     sort: "change",
     filter: "all",
+    search: "",
     feed: [], // 누적 정보 피드 (최신순)
     seen: new Set(), // 중복 방지 키
     hist: {}, // 종목별 가격 기록 (스파크라인)
@@ -317,10 +318,19 @@
     `;
   }
 
+  function matchStock(s, q) {
+    if (!q) return true;
+    return [s.name, s.id, sectorOf(s), s.type, s.role, s.ticker].join(" ").toLowerCase().includes(q);
+  }
   function renderStockList(stocks) {
-    const sorted = [...stocks].sort((a, b) =>
-      state.sort === "value" ? b.value - a.value : b.changeRate - a.changeRate
-    );
+    const q = (state.search || "").trim().toLowerCase();
+    const sorted = [...stocks]
+      .filter((s) => matchStock(s, q))
+      .sort((a, b) => (state.sort === "value" ? b.value - a.value : b.changeRate - a.changeRate));
+    if (!sorted.length) {
+      $("nbStockList").innerHTML = `<li class="nb-stock-empty">${q ? "검색 결과 없음" : "종목이 없습니다"}</li>`;
+      return;
+    }
     $("nbStockList").innerHTML = sorted
       .map((s) => {
         const c = dir(s.changeRate);
@@ -510,6 +520,22 @@
         if (state.room) renderStockList(stocksArray(state.room));
       })
     );
+    // 종목 검색 (즉시 필터, 추가 구독 없음 — 현재 room 데이터 재사용)
+    const nbSearch = document.getElementById("nbStockSearch");
+    const nbSearchClear = document.getElementById("nbStockSearchClear");
+    if (nbSearch) {
+      nbSearch.addEventListener("input", () => {
+        state.search = nbSearch.value;
+        if (nbSearchClear) nbSearchClear.hidden = !nbSearch.value;
+        renderStockList(stocksArray(state.room || { stocks: {} }));
+      });
+    }
+    if (nbSearchClear) {
+      nbSearchClear.addEventListener("click", () => {
+        nbSearch.value = ""; state.search = ""; nbSearchClear.hidden = true; nbSearch.focus();
+        renderStockList(stocksArray(state.room || { stocks: {} }));
+      });
+    }
     document.querySelectorAll(".nb-filter").forEach((b) =>
       b.addEventListener("click", () => {
         state.filter = b.dataset.f;
