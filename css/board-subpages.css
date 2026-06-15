@@ -1,0 +1,256 @@
+/* board-subpages.css — Board 레거시 서브페이지(companies/calendar/disclosures/reports/rumors/admin)를
+ * main board(board.css)의 라이트 STONK 톤으로 통일한다.
+ * 로드 순서: style.css(레거시) → stonk-ui.css(공용 토큰) → board-subpages.css(이 파일).
+ * 여기서 타깃하는 클래스는 서브페이지 전용이라 index.html(board.css/nb- 클래스)에는 영향이 없다.
+ * 레이아웃(그리드/간격/구조)은 건드리지 않고 색/배경/모서리/포커스만 라이트로 바꾼다.
+ */
+
+/* ===== 0) 라이트 톤 토큰 보정 (레거시 다크 잔재 정리, 브랜드 통일) ===== */
+:root {
+  color-scheme: light;
+  --bg: #eef1f6;
+  --bg-2: #f7f9fd;
+  --panel: #ffffff;
+  --panel-2: #f3f6fb;
+  --panel-3: #e7ecf4;
+  --line: #e8ebf1;
+  --text: #15181f;
+  --text2: #4b5563;
+  --muted: #5b6475;
+  --faint: #939aa7;
+  --violet: #5b6cff;
+  --violet-soft: rgba(91, 108, 255, 0.12);
+  --blue: #2f6bff;
+  --blue-soft: rgba(47, 107, 255, 0.12);
+  --red: #f23645;
+  --red-soft: rgba(242, 54, 69, 0.10);
+  --green: #15a977;
+  --green-soft: rgba(21, 169, 119, 0.11);
+  --shadow: 0 2px 12px rgba(20, 28, 46, 0.06), 0 1px 2px rgba(20, 28, 46, 0.04);
+}
+
+/* ===== 1) 페이지 바탕: main board 와 동일한 라이트 그라데이션 ===== */
+body {
+  background: radial-gradient(1200px 620px at 50% -12%, #f3f5fb 0%, var(--bg) 58%) fixed !important;
+  color: var(--text);
+}
+
+/* ===== 2) 헤더: 라이트 글래스 + 브랜드 마크 ===== */
+.site-header {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: saturate(140%) blur(14px);
+}
+.brand-mark {
+  border: none !important;
+  background: var(--brand-grad) !important;
+  box-shadow: 0 6px 18px rgba(91, 108, 255, 0.32);
+  border-radius: var(--radius-sm);
+}
+.brand small { color: var(--muted); }
+.site-nav a { color: var(--muted); border-radius: var(--radius-sm); }
+.site-nav a:hover,
+.site-nav a.is-active {
+  color: var(--violet) !important;
+  border-color: rgba(91, 108, 255, 0.42) !important;
+  background: var(--violet-soft) !important;
+}
+.menu-toggle {
+  background: var(--panel) !important;
+  border-color: var(--line);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+}
+
+/* ===== 3) 히어로 → 라이트 카드 ===== */
+.page-hero,
+.compact-hero {
+  background: var(--panel) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow) !important;
+}
+.hero-panel {
+  background: var(--panel-2) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius) !important;
+}
+.eyebrow { color: var(--violet); }
+.hero-panel span,
+.summary-caption { color: var(--muted); }
+/* 모바일에서 과한 제목 크기 완화 */
+.compact-hero h1 { font-size: clamp(1.7rem, 6vw, 2.6rem); }
+
+/* ===== 4) 카드/패널 전체 라이트화 (레거시 다크 카드 → 흰 카드) ===== */
+.summary-card,
+.info-card,
+.sector-card,
+.company-card,
+.event-card,
+.notice-item,
+.report-card,
+.stat-card,
+.admin-form,
+.admin-list-panel,
+.admin-item,
+.admin-section-card,
+.dashboard-tile,
+.issue-card,
+.brief-card,
+.round-summary-card,
+.collapsible-section,
+.shock-grid,
+.toolbar {
+  background: var(--panel) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow) !important;
+}
+.round-mini-stats div,
+.round-log-strip article,
+.admin-quick-nav {
+  background: var(--panel-2) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius-sm) !important;
+}
+.admin-quick-nav { backdrop-filter: none !important; }
+
+/* 대시보드 톤 타일: 라이트 베이스 + 컬러 힌트 유지 */
+.dashboard-tile.tone-good,
+.dashboard-tile.status-up {
+  background: linear-gradient(180deg, var(--red-soft), var(--panel)) !important;
+  border-color: rgba(242, 54, 69, 0.3) !important;
+}
+.dashboard-tile.tone-risk,
+.dashboard-tile.status-down {
+  background: linear-gradient(180deg, var(--blue-soft), var(--panel)) !important;
+  border-color: rgba(47, 107, 255, 0.3) !important;
+}
+.dashboard-tile.tone-watch,
+.dashboard-tile.status-neutral {
+  background: linear-gradient(180deg, var(--green-soft), var(--panel)) !important;
+  border-color: rgba(21, 169, 119, 0.3) !important;
+}
+.dashboard-tile.round {
+  background: linear-gradient(180deg, var(--violet-soft), var(--panel)) !important;
+  border-color: rgba(91, 108, 255, 0.3) !important;
+}
+
+/* ===== 5) 입력/선택/텍스트영역 → 라이트 ===== */
+.input-group input,
+.input-group select,
+.input-group textarea {
+  background: var(--panel) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius-sm) !important;
+}
+.input-group input::placeholder,
+.input-group textarea::placeholder { color: var(--faint) !important; }
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  border-color: var(--violet) !important;
+  box-shadow: 0 0 0 3px rgba(91, 108, 255, 0.16) !important;
+}
+.input-group span { color: var(--muted); }
+
+/* ===== 6) 칩/배지/요약/접기 ===== */
+.date-pill,
+.count-pill,
+.mini-tag,
+.status-badge,
+.source-badge,
+.kind-badge {
+  background: var(--panel-2) !important;
+  color: var(--muted) !important;
+  border-color: var(--line) !important;
+  border-radius: var(--radius-sm) !important;
+}
+.type-pill {
+  background: var(--violet-soft) !important;
+  color: var(--violet) !important;
+  border-color: rgba(91, 108, 255, 0.3) !important;
+  border-radius: var(--radius-sm) !important;
+}
+summary {
+  background: var(--panel-2) !important;
+  color: var(--text) !important;
+  border-color: var(--line) !important;
+  border-radius: var(--radius-sm) !important;
+}
+summary::after,
+.round-log-strip span,
+.ticker { color: var(--violet); }
+.flow-bar {
+  background: var(--panel-2) !important;
+  border-color: var(--line) !important;
+}
+
+/* ===== 7) 버튼: 브랜드/아웃라인/위험 ===== */
+.primary-button {
+  border: 1px solid transparent !important;
+  background: var(--brand-grad) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 18px rgba(91, 108, 255, 0.28);
+}
+.ghost-button,
+.file-button {
+  border: 1px solid var(--line) !important;
+  background: var(--panel) !important;
+  color: var(--text) !important;
+}
+.ghost-button:hover,
+.file-button:hover { border-color: var(--violet) !important; color: var(--violet) !important; }
+.danger-button {
+  border: 1px solid rgba(242, 54, 69, 0.4) !important;
+  background: var(--red-soft) !important;
+  color: var(--red) !important;
+}
+.admin-quick-nav a { color: var(--muted); }
+.admin-quick-nav a:hover,
+.admin-quick-nav a:focus-visible {
+  color: var(--violet) !important;
+  border-color: rgba(91, 108, 255, 0.42) !important;
+  background: var(--violet-soft) !important;
+}
+
+/* ===== 8) 어두운 카드용 밝은 텍스트 잔재 → 라이트 톤 ===== */
+.signal-line { color: var(--text2) !important; }
+.round-summary-card p,
+.issue-card p,
+.dashboard-tile span { color: var(--muted); }
+.issue-rank {
+  color: var(--violet) !important;
+  background: var(--violet-soft) !important;
+  border-color: rgba(91, 108, 255, 0.3) !important;
+}
+.collapsible-section > summary strong { color: var(--text); }
+
+/* ===== 9) 플로팅 '맨 위로' 버튼 ===== */
+.scroll-top {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid var(--line) !important;
+  color: var(--violet) !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: var(--shadow);
+}
+
+/* ===== 10) 모바일: 표/리스트/툴바가 깨지지 않게 ===== */
+@media (max-width: 720px) {
+  .toolbar,
+  .editor-toolbar,
+  .content-controls { grid-template-columns: 1fr !important; }
+  .card-grid,
+  .company-grid,
+  .sector-grid,
+  .report-grid,
+  .issue-grid,
+  .stat-grid,
+  .summary-grid,
+  .round-mini-stats,
+  .round-log-strip { grid-template-columns: 1fr !important; }
+  .admin-layout,
+  .admin-two-column { grid-template-columns: 1fr !important; }
+  .round-summary-card { grid-template-columns: 1fr !important; }
+}

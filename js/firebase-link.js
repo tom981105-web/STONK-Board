@@ -218,7 +218,8 @@
     const stockCount = Object.keys(room.stocks).length;
     const statusLabel =
       room.status === "playing" ? "진행 중" : room.status === "ended" ? "종료됨" : room.status || "";
-    setChip(`${activeCode} · ${statusLabel} · ${stockCount}종목`, true);
+    // board 는 읽기 중심 — 연결칩에 roomCode·종목수·읽기전용 표기(시장 보정은 battle/admin)
+    setChip(`${activeCode} · ${statusLabel} · ${stockCount}종목 · 읽기전용`, true);
 
     // 뉴스룸(index): 라이브 데이터로 직접 렌더 (정확한 값, 매 업데이트 반영)
     if (window.BoardLive) {
