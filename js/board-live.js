@@ -263,6 +263,24 @@
     renderIpo(room);
     renderSectors(stocks);
     renderClock();
+    renderStaleBanner(room);
+  }
+
+  // 시장이 오래 멈춰 있으면 안내 배너(읽기 전용 — board 는 직접 보정하지 않음).
+  // 실제 보정은 주식시장(STONK Battle) 방장 접속 또는 관리자 수동 보정이 수행한다.
+  function renderStaleBanner(room) {
+    let el = $("nbStaleBanner");
+    const stale = window.MarketHistory && window.MarketHistory.needsCatchup(room);
+    if (!stale) { if (el) el.hidden = true; return; }
+    const mins = window.MarketHistory.staleMinutes(room);
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "nbStaleBanner";
+      el.className = "nb-stale-banner";
+      document.body.appendChild(el);
+    }
+    el.hidden = false;
+    el.innerHTML = `⏸ 시장이 약 <b>${mins}분</b> 동안 멈춰 있었습니다. 주식시장(STONK Battle) 방장이 접속하거나 관리자가 보정하면 경과 흐름이 차트에 반영됩니다.`;
   }
 
   function renderClock() {
@@ -349,6 +367,14 @@
   function drawSpark(s) {
     const canvas = $("nbSpark");
     if (!canvas) return;
+    // 1순위: Firebase 압축 캔들 히스토리 → 캔들 + 거래량 차트(읽기 전용)
+    const raw = state.room && state.room.stocks && state.room.stocks[s.id];
+    const candleHist = raw && raw.history;
+    if (window.MarketHistory && candleHist) {
+      const candles = window.MarketHistory.seriesFor(candleHist, "all", 160);
+      if (candles && candles.length) { window.MarketHistory.renderChart(canvas, candles, {}); return; }
+    }
+    // 2순위: 세션 관측 스파크라인
     const hist = state.hist[s.id] || [s.price];
     const dpr = window.devicePixelRatio || 1;
     const w = canvas.clientWidth || 600, h = canvas.clientHeight || 90;
