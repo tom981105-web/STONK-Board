@@ -15,17 +15,23 @@
 
   // ★★ 배포 후 실제 GitHub Pages 주소로 바꾸세요 ★★
   const SITE_URLS = {
+    home:   "https://tom981105-web.github.io/STONK-Home/",
     battle: "https://tom981105-web.github.io/STONK-Battle/",
     board:  "https://tom981105-web.github.io/STONK-Board/",
     wiki:   "https://tom981105-web.github.io/STONK-Wiki/",
+    arcade: "https://tom981105-web.github.io/STONK-Arcade/",
+    gacha:  "https://tom981105-web.github.io/STONK-Gacha/",
     admin:  "https://tom981105-web.github.io/STONK-Admin/market-admin.html",
   };
 
   // 로컬 개발(파일 직접 열기 / localhost)에서 쓸 형제 폴더 상대경로 fallback
   const LOCAL_FALLBACK = {
+    home:   "../STONK-Home/index.html",
     battle: "../Market-battle/index.html",
     board:  "../Market-Board/index.html",
     wiki:   "../Market-Wiki/index.html",
+    arcade: "../STONK-Arcade/index.html",
+    gacha:  "../STONK-Gacha/index.html",
     admin:  "../Market-Admin/market-admin.html",
   };
 
@@ -107,13 +113,16 @@
     return url + (url.indexOf("?") >= 0 ? "&" : "?") + qs.join("&");
   }
 
+  function buildHomeUrl(room)   { return buildSiteUrl("home",   { room }); }
   function buildBattleUrl(room) { return buildSiteUrl("battle", { room }); }
   function buildBoardUrl(room)  { return buildSiteUrl("board",  { room }); }
   function buildWikiUrl(room, companyId) { return buildSiteUrl("wiki", { room, company: companyId }); }
+  function buildArcadeUrl(room) { return buildSiteUrl("arcade", { room }); }
+  function buildGachaUrl(room)  { return buildSiteUrl("gacha",  { room }); }
   function buildAdminUrl(room)  { return buildSiteUrl("admin",  { room }); }
 
   window.SiteConfig = {
-    VERSION: "1.4.0",
+    VERSION: "1.4.1",
     getSiteConfig,
     normalizeRoomCode,
     getUrlRoomCode,
@@ -122,9 +131,12 @@
     setLastRoomCode,
     getLastRoomCode,
     buildSiteUrl,
+    buildHomeUrl,
     buildBattleUrl,
     buildBoardUrl,
     buildWikiUrl,
+    buildArcadeUrl,
+    buildGachaUrl,
     buildAdminUrl,
     LAST_ROOM_KEY,
   };
