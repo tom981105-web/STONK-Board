@@ -8,36 +8,56 @@
 /* ===== 0) 라이트 톤 토큰 보정 (레거시 다크 잔재 정리, 브랜드 통일) ===== */
 :root {
   color-scheme: light;
-  --bg: #eef1f6;
-  --bg-2: #f7f9fd;
+  --bg: #f2f4f6;
+  --bg-2: #e9edf1;
   --panel: #ffffff;
-  --panel-2: #f3f6fb;
-  --panel-3: #e7ecf4;
-  --line: #e8ebf1;
-  --text: #15181f;
-  --text2: #4b5563;
-  --muted: #5b6475;
-  --faint: #939aa7;
-  --violet: #5b6cff;
-  --violet-soft: rgba(91, 108, 255, 0.12);
-  --blue: #2f6bff;
-  --blue-soft: rgba(47, 107, 255, 0.12);
-  --red: #f23645;
-  --red-soft: rgba(242, 54, 69, 0.10);
+  --panel-2: #f7f8fa;
+  --panel-3: #eef1f4;
+  --line: #e5e8eb;
+  --text: #191f28;
+  --text2: #4e5968;
+  --muted: #6b7684;
+  --faint: #8b95a1;
+  --violet: #3182f6;
+  --violet-soft: rgba(49, 130, 246, 0.12);
+  --blue: #3182f6;
+  --blue-soft: rgba(49, 130, 246, 0.12);
+  --red: #f04452;
+  --red-soft: rgba(240, 68, 82, 0.10);
   --green: #15a977;
   --green-soft: rgba(21, 169, 119, 0.11);
   --shadow: 0 2px 12px rgba(20, 28, 46, 0.06), 0 1px 2px rgba(20, 28, 46, 0.04);
+  --header-bg: rgba(255, 255, 255, 0.82);
+  --bg-grad: radial-gradient(1200px 620px at 50% -12%, #ffffff 0%, var(--bg) 58%);
+}
+/* 다크 토글 — 서브페이지 surface 토큰 재정의(소프트/액센트는 translucent 라 양 테마 공용) */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0e0e11;
+  --bg-2: #16171c;
+  --panel: #16171c;
+  --panel-2: #1d1e24;
+  --panel-3: #272832;
+  --line: #2a2c34;
+  --text: #eceef2;
+  --text2: #a4a9b4;
+  --muted: #8a93a3;
+  --faint: #6c707b;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.35);
+  --header-bg: rgba(16, 17, 22, 0.82);
+  --bg-grad: radial-gradient(1200px 620px at 50% -12%, #17181d 0%, var(--bg) 58%);
 }
 
-/* ===== 1) 페이지 바탕: main board 와 동일한 라이트 그라데이션 ===== */
+/* ===== 1) 페이지 바탕: 테마별 그라데이션 ===== */
 body {
-  background: radial-gradient(1200px 620px at 50% -12%, #f3f5fb 0%, var(--bg) 58%) fixed !important;
+  background: var(--bg-grad) fixed !important;
   color: var(--text);
+  transition: background-color 0.2s, color 0.2s;
 }
 
-/* ===== 2) 헤더: 라이트 글래스 + 브랜드 마크 ===== */
+/* ===== 2) 헤더: 글래스 + 브랜드 마크 ===== */
 .site-header {
-  background: rgba(255, 255, 255, 0.82) !important;
+  background: var(--header-bg) !important;
   border-bottom: 1px solid var(--line);
   backdrop-filter: saturate(140%) blur(14px);
 }
@@ -229,7 +249,7 @@ summary::after,
 
 /* ===== 9) 플로팅 '맨 위로' 버튼 ===== */
 .scroll-top {
-  background: rgba(255, 255, 255, 0.92) !important;
+  background: var(--header-bg) !important;
   border: 1px solid var(--line) !important;
   color: var(--violet) !important;
   border-radius: var(--radius-sm) !important;

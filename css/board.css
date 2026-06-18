@@ -1,26 +1,49 @@
 /* css/board.css — Market Board 뉴스룸 (Market Battle 톤) */
+/* 토스 라이트(기본). 다크는 [data-theme="dark"] 토글. 브랜드/up/down 은 stonk-ui.css(뒤 로드)가 토스 블루로 통일. */
 :root {
-  --bg: #eef1f6;
+  --bg: #f2f4f6;
+  --bg2: #e9edf1;
   --card: #ffffff;
-  --border: #e8ebf1;
-  --border2: #f0f2f6;
-  --text: #15181f;
-  --text2: #4b5563;
-  --muted: #939aa7;
-  --brand: #5b6cff;
-  --brand2: #8b5cf6;
-  --grad: linear-gradient(135deg, #5b6cff 0%, #8b5cf6 100%);
-  --up: #f23645;
-  --down: #1f6feb;
+  --card-soft: #f7f8fa;
+  --elev: #eef1f4;
+  --border: #e5e8eb;
+  --border2: #eef1f4;
+  --text: #191f28;
+  --text2: #4e5968;
+  --muted: #8b95a1;
+  --brand: #3182f6;
+  --brand2: #1b64da;
+  --grad: linear-gradient(135deg, #3182f6 0%, #4593fc 100%);
+  --up: #f04452;
+  --down: #3485fa;
   --radius: 18px;
   --radius-sm: 12px;
-  --shadow: 0 2px 10px rgba(20, 28, 46, 0.05), 0 1px 2px rgba(20, 28, 46, 0.04);
+  --shadow: 0 2px 10px rgba(20, 28, 46, 0.06), 0 1px 2px rgba(20, 28, 46, 0.04);
+  --header-bg: rgba(255, 255, 255, 0.86);
+  --bg-grad: radial-gradient(1200px 620px at 50% -12%, #ffffff 0%, var(--bg) 58%);
+}
+/* 다크 토글 — 표면(surface)만 재정의. 브랜드/상승·하락은 stonk-ui.css 가 통일 */
+[data-theme="dark"] {
+  --bg: #0e0e11;
+  --bg2: #202128;
+  --card: #16171c;
+  --card-soft: #1d1e24;
+  --elev: #272832;
+  --border: #2a2c34;
+  --border2: #212229;
+  --text: #eceef2;
+  --text2: #a4a9b4;
+  --muted: #6c707b;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.35);
+  --header-bg: rgba(16, 17, 22, 0.86);
+  --bg-grad: radial-gradient(1200px 620px at 50% -12%, #17181d 0%, var(--bg) 58%);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 .board-body {
   min-height: 100vh;
-  background: radial-gradient(1200px 620px at 50% -12%, #f3f5fb 0%, var(--bg) 58%);
+  background: var(--bg-grad);
   color: var(--text);
+  transition: background-color 0.2s, color 0.2s;
   font-family: "Pretendard", "Pretendard Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", system-ui, sans-serif;
   font-size: 14px;
   letter-spacing: -0.01em;
@@ -38,7 +61,7 @@ b, strong { font-variant-numeric: tabular-nums; }
   position: sticky; top: 0; z-index: 30;
   display: flex; align-items: center; gap: 18px;
   padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.86);
+  background: var(--header-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -61,7 +84,7 @@ b, strong { font-variant-numeric: tabular-nums; }
   border: 1px solid var(--border); background: var(--card); color: var(--text2);
   border-radius: 9px; padding: 7px 13px; font-size: 13px; font-weight: 700; cursor: pointer;
 }
-.nb-exit:hover { background: #f6f8fc; }
+.nb-exit:hover { background: var(--bg2); }
 
 /* 요약 띠 */
 .nb-summary {
@@ -92,7 +115,7 @@ b, strong { font-variant-numeric: tabular-nums; }
 .nb-sort-btn.is-active { background: rgba(91, 108, 255, 0.1); color: var(--brand); border-color: transparent; }
 .nb-stock-list { list-style: none; display: flex; flex-direction: column; gap: 4px; max-height: 560px; overflow-y: auto; }
 .nb-stock { padding: 9px 10px; border-radius: 10px; cursor: pointer; border: 1px solid transparent; transition: background .12s; }
-.nb-stock:hover { background: #f6f8fc; }
+.nb-stock:hover { background: var(--bg2); }
 .nb-stock.sel { background: rgba(91, 108, 255, 0.07); border-color: var(--brand); }
 .nb-s-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
 .nb-s-name { font-weight: 700; font-size: 13.5px; }
@@ -160,7 +183,7 @@ b, strong { font-variant-numeric: tabular-nums; }
 .nb-feed { list-style: none; display: flex; flex-direction: column; gap: 2px; max-height: 620px; overflow-y: auto; }
 .nb-feed.compact { max-height: 240px; }
 .nb-feed-item { display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: start; padding: 9px 8px; border-radius: 9px; }
-.nb-feed-item:hover { background: #f6f8fc; }
+.nb-feed-item:hover { background: var(--bg2); }
 .nb-feed-tag { font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 6px; white-space: nowrap; align-self: flex-start; }
 .k-news { background: rgba(91,108,255,.12); color: var(--brand); }
 .k-disc { background: rgba(242,182,0,.18); color: #a6790a; }
@@ -201,27 +224,27 @@ b, strong { font-variant-numeric: tabular-nums; }
 .board-gate {
   position: fixed; inset: 0; z-index: 1000;
   display: flex; align-items: center; justify-content: center; padding: 24px 16px;
-  background: radial-gradient(1000px 560px at 50% -10%, #eef0fb 0%, #e7eaf3 60%), #e7eaf3;
+  background: var(--bg-grad);
 }
 .board-gate.hidden { display: none; }
 .gate-card {
-  width: 100%; max-width: 400px; background: #fff; border: 1px solid var(--border);
+  width: 100%; max-width: 400px; background: var(--card); border: 1px solid var(--border);
   border-radius: 22px; box-shadow: 0 24px 60px rgba(20, 28, 46, 0.16);
   padding: 38px 30px 26px; text-align: center; display: flex; flex-direction: column; gap: 12px;
   animation: gateIn .35s cubic-bezier(.2,.7,.2,1);
 }
 @keyframes gateIn { from { opacity: 0; transform: translateY(12px) scale(.98); } }
 .gate-brand { display: flex; justify-content: center; }
-.gate-mark { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 17px; background: var(--grad); color: #fff; font-weight: 900; font-size: 22px; box-shadow: 0 10px 26px rgba(91,108,255,.42); }
+.gate-mark { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 17px; background: var(--grad); color: #fff; font-weight: 900; font-size: 22px; box-shadow: 0 10px 26px rgba(49,130,246,.42); }
 .gate-title { margin: 4px 0 0; font-size: 28px; font-weight: 800; letter-spacing: -0.03em; }
 .gate-title span { color: var(--brand); }
 .gate-sub { color: var(--text2); font-size: 14px; line-height: 1.6; }
 .gate-sub b { color: var(--text); }
-.gate-input { width: 100%; margin-top: 6px; padding: 15px; border: 1.5px solid #e3e7ef; border-radius: 14px; background: #fbfcfe; font-size: 22px; font-weight: 800; text-align: center; letter-spacing: 8px; text-transform: uppercase; color: var(--text); outline: none; font-family: "SF Mono", Consolas, monospace; }
-.gate-input::placeholder { font-size: 16px; letter-spacing: 0; font-weight: 500; color: #aab2c0; font-family: "Pretendard", sans-serif; }
-.gate-input:focus { border-color: var(--brand); background: #fff; }
+.gate-input { width: 100%; margin-top: 6px; padding: 15px; border: 1.5px solid var(--border); border-radius: 14px; background: var(--bg2); font-size: 22px; font-weight: 800; text-align: center; letter-spacing: 8px; text-transform: uppercase; color: var(--text); outline: none; font-family: "SF Mono", Consolas, monospace; }
+.gate-input::placeholder { font-size: 16px; letter-spacing: 0; font-weight: 500; color: var(--muted); font-family: "Pretendard", sans-serif; }
+.gate-input:focus { border-color: var(--brand); background: var(--card); }
 .gate-btn { width: 100%; padding: 15px; border: none; border-radius: 14px; font-size: 16px; font-weight: 700; cursor: pointer; font-family: inherit; }
-.gate-btn.primary { background: var(--grad); color: #fff; box-shadow: 0 8px 22px rgba(91,108,255,.36); }
+.gate-btn.primary { background: var(--grad); color: #fff; box-shadow: 0 8px 22px rgba(49,130,246,.36); }
 .gate-btn.primary:hover { filter: brightness(1.06); }
 .gate-msg { min-height: 18px; font-size: 13.5px; font-weight: 600; color: var(--up); }
 .gate-demo { background: none; border: none; color: var(--muted); font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
