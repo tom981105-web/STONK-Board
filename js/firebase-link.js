@@ -261,7 +261,8 @@
     // URL ?room= / ?roomCode= 가 있으면 최우선으로 연결 (분리 배포 사이트 간 이동 대응)
     let urlRoom = "";
     try { urlRoom = window.SiteConfig ? window.SiteConfig.getUrlRoomCode() : ""; } catch (e) {}
-    const saved = urlRoom || localStorage.getItem(ROOM_KEY);
+    // 단일 방 운영: 방 코드 개념을 없앴으므로 항상 고정 방(MAIN)에 연결한다.
+    const saved = urlRoom || localStorage.getItem(ROOM_KEY) || "MAIN";
     // 데모(둘러보기) 모드 제거 — 끼어 있던 기존 플래그도 정리해 게이트가 정상 동작하게 한다
     try { localStorage.removeItem(DEMO_KEY); } catch (e) {}
 
