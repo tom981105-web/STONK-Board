@@ -151,6 +151,7 @@
     set("nbNavWiki", SC.buildWikiUrl(code, ""));
     set("nbNavArcade", SC.buildArcadeUrl(code));
     set("nbNavGacha", SC.buildGachaUrl(code));
+    set("nbNavBank", SC.buildBankUrl(code));
     // 관리자 페이지 링크는 '관리자'에게만 노출. (같은 도메인 Firebase 인증 세션으로 판별)
     const adminEl = document.getElementById("nbNavAdmin");
     if (adminEl) adminEl.href = SC.buildAdminUrl(code);

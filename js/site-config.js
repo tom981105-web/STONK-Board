@@ -21,6 +21,7 @@
     wiki:   "https://tom981105-web.github.io/STONK-Wiki/",
     arcade: "https://tom981105-web.github.io/STONK-Arcade/",
     gacha:  "https://tom981105-web.github.io/STONK-Gacha/",
+    bank:   "https://tom981105-web.github.io/STONK-Bank/",
     admin:  "https://tom981105-web.github.io/STONK-Admin/market-admin.html",
   };
 
@@ -32,6 +33,7 @@
     wiki:   "../Market-Wiki/index.html",
     arcade: "../STONK-Arcade/index.html",
     gacha:  "../STONK-Gacha/index.html",
+    bank:   "../STONK-Bank/index.html",
     admin:  "../Market-Admin/market-admin.html",
   };
 
@@ -120,6 +122,7 @@
   function buildWikiUrl(room, companyId) { return buildSiteUrl("wiki", { room, company: companyId }); }
   function buildArcadeUrl(room) { return buildSiteUrl("arcade", { room }); }
   function buildGachaUrl(room)  { return buildSiteUrl("gacha",  { room }); }
+  function buildBankUrl(room)   { return buildSiteUrl("bank",   { room }); }
   function buildAdminUrl(room)  { return buildSiteUrl("admin",  { room }); }
 
   window.SiteConfig = {
@@ -138,6 +141,7 @@
     buildWikiUrl,
     buildArcadeUrl,
     buildGachaUrl,
+    buildBankUrl,
     buildAdminUrl,
     LAST_ROOM_KEY,
   };
