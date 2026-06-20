@@ -20,6 +20,7 @@
   const SDK = [
     "https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js",
     "https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js",
+    "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js",
   ];
   const ROOM_KEY = "mb-board-room"; // 연결한 방 코드 (페이지 간 공유)
   const DEMO_KEY = "mb-board-demo"; // 연결 없이 둘러보기 모드
@@ -145,10 +146,35 @@
       const el = document.getElementById(id);
       if (el) { el.href = url; el.hidden = false; }
     };
+    set("nbNavHome", SC.buildHomeUrl(code));
     set("nbNavBattle", SC.buildBattleUrl(code));
     set("nbNavWiki", SC.buildWikiUrl(code, ""));
-    // 관리자 페이지 링크는 비로그인 사이트(board)에서는 노출하지 않는다(항상 숨김).
-    // 관리자는 주식시장(battle) 로그인 후 또는 직접 URL 로만 접근한다.
+    set("nbNavArcade", SC.buildArcadeUrl(code));
+    set("nbNavGacha", SC.buildGachaUrl(code));
+    // 관리자 페이지 링크는 '관리자'에게만 노출. (같은 도메인 Firebase 인증 세션으로 판별)
+    const adminEl = document.getElementById("nbNavAdmin");
+    if (adminEl) adminEl.href = SC.buildAdminUrl(code);
+    revealAdminNavIfAdmin("nbNavAdmin");
+  }
+
+  // 같은 origin(github.io)에서 공유되는 Firebase Auth 세션으로 관리자 여부를 판별해 관리자 링크를 노출
+  const ADMIN_UID = "yaV8N60yIiUggaWNpNF2VhkCwxb2";
+  const ADMIN_EMAIL = "tomem@naver.com";
+  let adminNavBound = false;
+  function revealAdminNavIfAdmin(elId) {
+    if (adminNavBound) return; adminNavBound = true;
+    try {
+      if (!window.firebase || !window.firebase.auth) return;
+      window.firebase.auth().onAuthStateChanged((u) => {
+        const el = document.getElementById(elId);
+        if (!el) return;
+        let isAdm = !!u && (u.uid === ADMIN_UID || String((u.email || "")).toLowerCase() === ADMIN_EMAIL);
+        if (isAdm) { el.hidden = false; return; }
+        if (u && window.firebase.database) {
+          window.firebase.database().ref("admins/" + u.uid).once("value").then((s) => { if (s.val() === true) el.hidden = false; }).catch(() => {});
+        } else { el.hidden = true; }
+      });
+    } catch (e) {}
   }
 
   // ===== 연결 / 해제 =====
